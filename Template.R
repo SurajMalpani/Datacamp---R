@@ -1,15 +1,22 @@
 
 rm(list=ls())       #Clear Environment
 
-library(tidyverse)
-library(tidyr)
-library(dplyr)
-library(purrr)
-library(lubridate)
-library(stringr)
-library(ggplot2)
-library(data.table)
+#library(tidyverse)
+#library(tidyr)
+#library(dplyr)
+#library(purrr)
+#library(lubridate)
+#library(stringr)
+#library(ggplot2)
+#library(data.table)
 
+#Adding dependent libraries (installs packages if its uninstalled on a new machine)
+rqrd_Pkg = c('tidyverse','readxl','knitr','tidyr','purrr','lubridate','stringr')
+for(p in rqrd_Pkg){
+  if(!require(p,character.only = TRUE)) 
+    install.packages(p);
+  library(p,character.only = TRUE)
+}
 #Importing data: readr: read_csv | readxl::read_excel | data.table::fread | gdata::read.xls
 #Functions: purrr : map_dbl, map, map_chr, map2, pmap, invoke_map  | walk, 
 #Cleaning data: tidyr:spread,gather,unite,separate
