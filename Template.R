@@ -18,6 +18,9 @@ for(p in rqrd_Pkg){
   library(p,character.only = TRUE)
 }
 
+#Set wd as current file directory
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
 #Choose an excel file to import in R
 Data <- read_excel(file.choose())
 
